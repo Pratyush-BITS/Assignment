@@ -10,7 +10,13 @@
     "title": "{{appTitle}}",
     "description": "{{appDescription}}",
     "resources": "resources.json",
-    "ach": "ach"
+    "ach": "ach",
+    "dataSources": {
+			"storehouse_datasource": {
+				"uri": "model/storehouse.json",
+				"type": "JSON"
+			}
+    }
   },
   "sap.ui": {
     "technology": "UI5",
@@ -56,6 +62,10 @@
         "settings": {
           "bundleName": "com.learn.assignment.i18n.i18n"
         }
+      },
+      "storehouse" :{
+        "type" : "sap.ui.model.json.JSONModel",
+        "dataSource": "storehouse_datasource"
       }
     },
     "resources": {
