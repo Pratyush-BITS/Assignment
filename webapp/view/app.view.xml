@@ -9,7 +9,59 @@
 			<pages>
 				<Page id="page" title="{i18n>title}">
 					<content>
-						<Button text="Message" press=".onPress"/>
+						<HBox >
+							
+							<VBox class="sapUiSmallMarginBeginEnd">
+								<Text text="{i18n>material} :" class="sapUiSmallMarginTopBottom sapUiSmallMarginBeginEnd" textAlign="Center"/>
+								<Text text="{i18n>segment} :"  class="sapUiSmallMarginTopBottom sapUiSmallMarginBeginEnd" textAlign="Center"/>
+							</VBox>
+								
+							<VBox class="sapUiSmallMarginBeginEnd">
+								<Input id="material"/>	 
+								<Input id="segment" />
+							</VBox>
+
+							<VBox class="sapUiSmallMarginBeginEnd">		
+								<Text text="{i18n>batch} :" class="sapUiSmallMarginTopBottom sapUiSmallMarginBeginEnd" textAlign="Center"/>
+								<Text text="{i18n>Quantity} :"  class="sapUiSmallMarginTopBottom sapUiSmallMarginBeginEnd" textAlign="Center"/>
+							</VBox>
+
+							<VBox class="sapUiSmallMarginBeginEnd">	
+								<Input id="batch"/>
+								<Input id="quantity"/>
+							</VBox>
+
+							<VBox class="sapUiSmallMarginBeginEnd">
+								<Button text="{i18n>submit}" press=".onSubmit"/>
+								<Button text="{i18n>clear}" press=".onClear"/>
+							</VBox>
+							
+						</HBox>
+
+						<Table>
+						<headerToolbar>
+							<OverflowToolbar >
+								<content>
+								<Title text = "{i18n>clear}" level ="H2"/>
+								</content>
+							</OverflowToolbar>
+						</headerToolbar>
+							<columns>
+								<Column >
+									<Text text="{i18n>material}"></Text>
+								</Column>
+								<Column >
+									<Text text="{i18n>segment}"></Text>
+								</Column>
+								<Column >
+									<Text text="{i18n>batch}"></Text>
+								</Column>
+								<Column >
+									<Text text="{i18n>Quantity}"></Text>
+								</Column>
+							</columns>
+						</Table>
+
 					</content>
 				</Page>
 			</pages>

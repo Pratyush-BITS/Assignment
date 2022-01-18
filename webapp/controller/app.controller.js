@@ -12,14 +12,11 @@ sap.ui.define([
 			onInit: function () {
 				MessageToast.show("Haai");
 			},
-			
-			/*
-			Add a debugger on Message toast after loading the page,
-			goto console and write 
-			this.getView().getModel('storehouse').getJSON();
-			*/
-			onPress: function(){
+			onSubmit: function(){
 				MessageToast.show("For Debugger")
+			},
+			onClear:function(){
+				
 			}
 		});
 	});
