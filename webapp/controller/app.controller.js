@@ -35,9 +35,11 @@ sap.ui.define([
 						var data = {
 							'Material':materialVal,
 							'Segment':segmentVal,
-							'Batch':_fields.batchVal,
+							'Batch':batchVal,
 							'Quantity':quantityVal
 						};
+						storeHouseModel.getData().stock.push(data);
+						var oTable = this.byId('stockTable')
 						var oColListItem = this.getView().byId('colListItem');
 						oTable.bindItems("storehouse>/stock",oColListItem,null,null);
 						this.onClear();
