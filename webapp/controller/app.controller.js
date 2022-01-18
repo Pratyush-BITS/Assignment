@@ -12,8 +12,13 @@ sap.ui.define([
 			onInit: function () {
 				MessageToast.show("Haai");
 			},
+			onKeyPress: function(oEvent){
+				var _oQuantity= oEvent.getSource();
+				var text = _oQuantity.getValue();
+				text = text.replace(/[^\d]/g, '');
+				_oQuantity.setValue(text);
+			},
 			onSubmit: function(oEvent){
-				
 			},
 			onClear:function(oEvent){
 				this.byId('material').setValue('');

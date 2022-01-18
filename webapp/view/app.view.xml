@@ -23,12 +23,12 @@
 
 							<VBox class="sapUiSmallMarginBeginEnd">		
 								<Text text="{i18n>batch} :" class="sapUiSmallMarginTopBottom sapUiSmallMarginBeginEnd" textAlign="Center"/>
-								<Text text="{i18n>Quantity} :"  class="sapUiSmallMarginTopBottom sapUiSmallMarginBeginEnd" textAlign="Center"/>
+								<Text text="{i18n>quantity} :"  class="sapUiSmallMarginTopBottom sapUiSmallMarginBeginEnd" textAlign="Center"/>
 							</VBox>
 
 							<VBox class="sapUiSmallMarginBeginEnd">	
 								<Input id="batch"/>
-								<Input id="quantity"/>
+								<Input id="quantity" placeholder="{i18n>numericTextOnly}" liveChange=".onKeyPress"/>
 							</VBox>
 
 							<VBox class="sapUiSmallMarginBeginEnd">
