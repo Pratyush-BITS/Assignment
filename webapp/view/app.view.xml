@@ -57,7 +57,7 @@
 									<Text text="{i18n>batch}"></Text>
 								</Column>
 								<Column >
-									<Text text="{i18n>Quantity}"></Text>
+									<Text text="{i18n>quantity}"></Text>
 								</Column>
 							</columns>
 						</Table>

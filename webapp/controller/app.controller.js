@@ -12,11 +12,14 @@ sap.ui.define([
 			onInit: function () {
 				MessageToast.show("Haai");
 			},
-			onSubmit: function(){
-				MessageToast.show("For Debugger")
-			},
-			onClear:function(){
+			onSubmit: function(oEvent){
 				
+			},
+			onClear:function(oEvent){
+				this.byId('material').setValue('');
+				this.byId('segment').setValue('');
+				this.byId('batch').setValue('');
+				this.byId('quantity').setValue('');
 			}
 		});
 	});
