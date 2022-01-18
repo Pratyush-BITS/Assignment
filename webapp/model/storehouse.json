@@ -1,5 +1,10 @@
 {
-    "stock": [
-        {}
+    "stock": [ 
+        {
+            "Material":"test",
+            "Segment":"testSegment",
+            "Batch":"testBatch",
+            "Quantity":3
+        }
     ]
 }

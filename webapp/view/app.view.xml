@@ -38,14 +38,8 @@
 							
 						</HBox>
 
-						<Table>
-						<headerToolbar>
-							<OverflowToolbar >
-								<content>
-								<Title text = "{i18n>clear}" level ="H2"/>
-								</content>
-							</OverflowToolbar>
-						</headerToolbar>
+						<Table id="stockTable" items="{storehouse>/stock}" headerText="{i18n>tabletitle}">
+						
 							<columns>
 								<Column >
 									<Text text="{i18n>material}"></Text>
@@ -60,6 +54,16 @@
 									<Text text="{i18n>quantity}"></Text>
 								</Column>
 							</columns>
+							<items>
+								<ColumnListItem id="colListItem" type="Navigation">
+									<cells>
+										<Text text="{storehouse>Material}"/>
+										<Text text="{storehouse>Segment}"/>
+										<Text text="{storehouse>Batch}"/>
+										<Text text="{storehouse>Quantity}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
 						</Table>
 
 					</content>
