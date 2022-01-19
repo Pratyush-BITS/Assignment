@@ -70,6 +70,15 @@ sap.ui.define([
 				};
 				return -1;
 			},
+
+			onNavigation:function(oEvent){
+				var oItem = oEvent.getSource();
+				var oRouter = this.getOwnerComponent().getRouter();
+				oRouter.navTo("detail", {
+					id: window.encodeURIComponent(oItem.getBindingContext("storehouse").getPath().substr(1))
+				});
+			},
+
 			onClear:function(){
 				_fields.material.setValue('');
 				_fields.segment.setValue('');

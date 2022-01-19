@@ -52,7 +52,7 @@
 								</Column>
 							</columns>
 							<items>
-								<ColumnListItem id="colListItem" type="Navigation">
+								<ColumnListItem id="colListItem" type="Navigation" press=".onNavigation">
 									<cells>
 										<Text text="{storehouse>Material}"/>
 										<Text text="{storehouse>Segment}"/>

@@ -87,18 +87,24 @@
       },
       "routes": [
         {
-          "name": "Routeapp",
-          "pattern": "Routeapp",
-          "target": ["Targetapp"]
+          "name": "app",
+          "pattern": "",
+          "target": ["app"]
+        },
+        {
+          "name": "detail",
+          "pattern": "detail/{id}",
+          "target": ["detail"]
         }
       ],
       "targets": {
-        "Targetapp": {
-          "viewType": "XML",
-          "transition": "slide",
-          "clearControlAggregation": false,
-          "viewId": "app",
+        "app": {
+          "viewId": "",
           "viewName": "app"
+        },
+        "detail": {
+          "viewId": "",
+          "viewName": "detail"
         }
       }
     }

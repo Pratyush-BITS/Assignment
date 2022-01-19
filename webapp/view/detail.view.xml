@@ -1,0 +1,15 @@
+<mvc:View 
+    controllerName="com.learn.assignment.controller.detail"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page id="detail" title="{i18n>detailtitle}" showNavButton="true" navButtonPress=".onNavBack">
+	    <content>
+
+           <Button text="hey"></Button>
+
+        </content>
+	</Page>
+		
+</mvc:View>
