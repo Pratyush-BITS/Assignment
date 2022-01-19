@@ -58,9 +58,9 @@
 								<ColumnListItem id="colListItem" type="Navigation">
 									<cells>
 										<Text text="{storehouse>Material}"/>
-										<Text text="{storehouse>Segment}"/>
-										<Text text="{storehouse>Batch}"/>
-										<Text text="{storehouse>Quantity}"/>
+										<Text text="{storehouse>seg/Segment}"/>
+										<Text text="{storehouse>seg/bat/Batch}"/>
+										<Text text="{storehouse>seg/bat/Quantity}"/>
 									</cells>
 								</ColumnListItem>
 							</items>

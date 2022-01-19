@@ -1,10 +1,24 @@
 {
-    "stock": [ 
+    "stock": [
         {
-            "Material":"test",
-            "Segment":"testSegment",
-            "Batch":"testBatch",
-            "Quantity":3
+            "Material":"test1",
+            "seg" : {
+                    "Segment":"testSegment1",
+                    "bat":{
+                        "Batch":"testBatch1",
+                        "Quantity":3
+                    }
+                }
+        },
+        {
+            "Material":"test2",
+            "seg" : {
+                    "Segment":"testSegment2",
+                    "bat":{
+                        "Batch":"testBatch2",
+                        "Quantity":32
+                    }
+            }
         }
     ]
 }

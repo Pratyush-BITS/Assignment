@@ -34,9 +34,13 @@ sap.ui.define([
 						var storeHouseModel = this.getView().getModel('storehouse');
 						var data = {
 							'Material':materialVal,
-							'Segment':segmentVal,
-							'Batch':batchVal,
-							'Quantity':quantityVal
+							"seg" : {
+								'Segment':segmentVal,
+								"bat":{
+									'Batch':batchVal,
+									'Quantity':quantityVal
+								}
+							}
 						};
 						storeHouseModel.getData().stock.push(data);
 						var oTable = this.byId('stockTable')
