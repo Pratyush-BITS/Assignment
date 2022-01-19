@@ -2,23 +2,17 @@
     "stock": [
         {
             "Material":"test1",
-            "seg" : {
-                    "Segment":"testSegment1",
-                    "bat":{
-                        "Batch":"testBatch1",
-                        "Quantity":3
-                    }
-                }
+            "Segment":"testSegment1",
+            "Batch":["testBatch1"],
+            "Quantity":[3],
+            "Total Quantity":0            
         },
         {
             "Material":"test2",
-            "seg" : {
-                    "Segment":"testSegment2",
-                    "bat":{
-                        "Batch":"testBatch2",
-                        "Quantity":32
-                    }
-            }
+            "Segment":"testSegment2",
+            "Batch":["testBatch2"],
+            "Quantity":[32],
+            "Total Quantity":0  
         }
     ]
 }
