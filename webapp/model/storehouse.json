@@ -5,14 +5,14 @@
             "Segment":"testSegment1",
             "Batch":["testBatch1"],
             "Quantity":[3],
-            "Total Quantity":0            
+            "TotalQuantity":0            
         },
         {
             "Material":"test2",
             "Segment":"testSegment2",
             "Batch":["testBatch2"],
             "Quantity":[32],
-            "Total Quantity":0  
+            "TotalQuantity":0  
         }
     ]
 }
