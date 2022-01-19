@@ -54,7 +54,7 @@ sap.ui.define([
 						
 						var oTable = this.byId('stockTable')
 						var oColListItem = this.getView().byId('colListItem');
-						oTable.bindItems("storehouse>/stock",oColListItem,null,null);
+						oTable.bindItems("storehouse>/stock",oColListItem);
 						this.onClear();
 					}
 				else{
