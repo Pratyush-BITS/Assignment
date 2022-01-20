@@ -3,16 +3,24 @@
         {
             "Material":"test1",
             "Segment":"testSegment1",
-            "Batch":["testBatch1"],
-            "Quantity":[3],
-            "TotalQuantity":0            
+            "TotalQuantity":23,
+            "bat":[
+                {
+                    "Batch":["testBatch1"],
+                    "Quantity":[23]
+                }
+            ]
         },
         {
             "Material":"test2",
             "Segment":"testSegment2",
-            "Batch":["testBatch2"],
-            "Quantity":[32],
-            "TotalQuantity":0  
+            "TotalQuantity":3,
+            "bat":[
+                {
+                    "Batch":["testBatch2"],
+                    "Quantity":[3]
+                }
+            ]
         }
     ]
 }

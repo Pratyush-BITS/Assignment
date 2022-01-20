@@ -4,10 +4,52 @@
     displayBlock="true"
     xmlns="sap.m"
 >
-    <Page id="detail" title="{i18n>detailtitle}" showNavButton="true" navButtonPress=".onNavBack">
-	    <content>
+    <Page id="detail" title="{i18n>detailtitle}" showNavButton="true" navButtonPress=".onNavBack" >
+	    <content >
 
-           <Button text="hey"></Button>
+            <HBox class="sapUiSmallMarginTopBottom sapUiLargeMarginBeginEnd">
+
+                <VBox class="sapMTextBold sapUiLargeMarginBeginEnd" backgroundDesign="Solid" >
+                    <Label text="{i18n>material}" class=" sapUiSmallMarginTopBottom sapUiSmallMarginBeginEnd"/>
+                    <Text text="{storehouse>Material}" class="sapUiTinyMarginTopBottom sapUiSmallMarginBeginEnd"/>
+                </VBox>
+            
+                <VBox class="sapMTextBold sapUiLargeMarginBeginEnd" backgroundDesign="Solid">
+                    <Label text="{i18n>segment}" design="Bold" class="sapUiSmallMarginTopBottom sapUiSmallMarginBeginEnd"/>
+                    <Text text="{storehouse>Segment}" class="sapUiTinyMarginTopBottom sapUiSmallMarginBeginEnd"/>
+                </VBox>
+            
+                <VBox class="sapMTextBold sapUiLargeMarginBeginEnd" backgroundDesign="Solid">
+                    <Label text="{i18n>totalquantity}" design="Bold" class="sapUiSmallMarginTopBottom sapUiSmallMarginBeginEnd"/>
+                    <Text text="{storehouse>TotalQuantity}" class="sapUiTinyMarginTopBottom sapUiSmallMarginBeginEnd"/>
+                </VBox>
+            
+            </HBox>
+
+            <Panel headerText="{i18n>detailtabletitle}" >
+
+                <Table items="{storehouse>bat}" id="stockDetailTable" width ="40%" alternateRowColors="true">
+						
+							<columns >
+								<Column hAlign="Center">
+									<Text text="{i18n>batch}"></Text>
+								</Column>
+								<Column hAlign="Center">
+									<Text text="{i18n>quantity}"></Text>
+								</Column>
+							</columns>
+                            
+							<items>
+								<ColumnListItem id="colListItem">
+									<cells>
+										<Text text="{storehouse>Batch}"/>
+										<Text text="{storehouse>Quantity}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+
+            </Panel>
 
         </content>
 	</Page>

@@ -37,17 +37,24 @@ sap.ui.define([
 						var _row = this.findData(_stock, materialVal, segmentVal);
 
 						if( _row != -1){
-							_stock.at(_row).Batch.push(batchVal);
-							_stock.at(_row).Quantity.push(quantityVal);
+							var bq = {
+								'Batch':[batchVal],
+								'Quantity':[quantityVal]
+							};
 							_stock.at(_row).TotalQuantity += quantityVal;
+							_stock.at(_row).bat.push(bq);
 						}
 						else{
 							var data = {
 								'Material':materialVal,
 								'Segment':segmentVal,
-								'Batch':[batchVal],
-								'Quantity':[quantityVal],
-								'TotalQuantity': quantityVal
+								'TotalQuantity': quantityVal,
+								'bat': [
+									{
+										'Batch':[batchVal],
+										'Quantity':[quantityVal]
+									}
+								]
 							};
 							_stock.push(data);
 						}

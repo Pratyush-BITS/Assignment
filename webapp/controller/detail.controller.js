@@ -1,11 +1,12 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-	"sap/ui/core/routing/History"
+	"sap/ui/core/routing/History",
+    "sap/m/MessageToast"
 ], 
     /**     
 	 * @param {typeof sap.ui.core.mvc.Controller} Controller
 	 */
-    function(Controller, MessageToast, JSONModel) {
+    function(Controller, JSONModel, MessageToast) {
     'use strict';
 
         return Controller.extend("com.learn.assignment.controller.detail", {
@@ -13,6 +14,7 @@ sap.ui.define([
             onInit: function() {    
                 var oRouter = this.getOwnerComponent().getRouter();
 			    oRouter.getRoute("detail").attachPatternMatched(this._onObjectMatched, this);
+                MessageToast.show("ds");
             },
             _onObjectMatched: function(oEvent){
                 this.getView().bindElement({
