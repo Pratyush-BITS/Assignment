@@ -1,1 +1,5 @@
 /* Enter your custom styles here */
+
+.sapMTextBold div > span {
+    font-size: 20px !important;
+} 
