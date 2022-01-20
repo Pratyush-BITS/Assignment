@@ -25,38 +25,46 @@ sap.ui.define([
 				_fields.quantity.setValue(text);
 			},
 			onSubmit: function(oEvent){
-				var materialVal = _fields.material.getValue()
-				var segmentVal = _fields.segment.getValue();
-				var batchVal = _fields.batch.getValue();
-				var quantityVal = parseInt(_fields.quantity.getValue());
+				var _materialVal = _fields.material.getValue()
+				var _segmentVal = _fields.segment.getValue();
+				var _batchVal = _fields.batch.getValue();
+				var _quantityVal = parseInt(_fields.quantity.getValue());
 
-				if( materialVal &&  segmentVal && batchVal && quantityVal){
-						var storeHouseModel = this.getView().getModel('storehouse');
+				if( _materialVal &&  _segmentVal && _batchVal && _quantityVal){
+						var oStoreHouseModel = this.getView().getModel('storehouse');
+						var oStock = oStoreHouseModel.getData().stock;
+						var _msRow = this._findMatAndSegRow(oStock, _materialVal, _segmentVal);
 
-						var _stock = storeHouseModel.getData().stock;
-						var _row = this.findData(_stock, materialVal, segmentVal);
+						if( _msRow != -1){
+							
+							var oBat = oStock.at(_msRow).bat;
+							var _batRow = this._findBatRow(oBat,_batchVal)
 
-						if( _row != -1){
-							var bq = {
-								'Batch':[batchVal],
-								'Quantity':[quantityVal]
-							};
-							_stock.at(_row).TotalQuantity += quantityVal;
-							_stock.at(_row).bat.push(bq);
+							if(_batRow !== -1){
+								oStock.at(_msRow).bat.at(_batRow).Quantity += _quantityVal;
+							}
+							else{
+								var _bat = {
+									'Batch':_batchVal,
+									'Quantity':_quantityVal
+								};
+								oStock.at(_msRow).bat.push(_bat);
+							}
+							oStock.at(_msRow).TotalQuantity += _quantityVal;
 						}
 						else{
-							var data = {
-								'Material':materialVal,
-								'Segment':segmentVal,
-								'TotalQuantity': quantityVal,
+							var _oData = {
+								'Material':_materialVal,
+								'Segment':_segmentVal,
+								'TotalQuantity': _quantityVal,
 								'bat': [
 									{
-										'Batch':[batchVal],
-										'Quantity':[quantityVal]
+										'Batch':_batchVal,
+										'Quantity':_quantityVal
 									}
 								]
 							};
-							_stock.push(data);
+							oStock.push(_oData);
 						}
 						
 						var oTable = this.byId('stockTable')
@@ -68,11 +76,23 @@ sap.ui.define([
 					MessageToast.show("Please enter proper data in all the fields")
 				}
 			},
-			findData: function(jStock, materialVal, segmentVal){
-				for(var i =0; i< jStock.length; i++){
-					var data = jStock.at(i);
-					if(data.Material === materialVal && data.Segment === segmentVal){
-						return i;
+			_findMatAndSegRow: function(_oStock, _materialVal, _segmentVal){
+				
+				for(var row = 0; row < _oStock.length; row++){
+					var _data = _oStock.at(row);
+					if(_data.Material === _materialVal && _data.Segment === _segmentVal){
+						return row;
+					}
+				};
+				return -1;
+			},
+
+			_findBatRow: function(oBat,_batchVal){
+				for(var row = 0; row < oBat.length; row++){
+					var _data = oBat.at(row);
+					console.log(_batchVal);
+					if(_data.Batch === _batchVal){
+						return row;
 					}
 				};
 				return -1;
