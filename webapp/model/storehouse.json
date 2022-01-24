@@ -1,6 +1,7 @@
 {
     "stock": [
         {
+            "stockId":0,
             "Material":"test1",
             "Segment":"testSegment1",
             "TotalQuantity":23,
@@ -12,6 +13,7 @@
             ]
         },
         {
+            "stockId":1,
             "Material":"test2",
             "Segment":"testSegment2",
             "TotalQuantity":3,

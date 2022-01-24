@@ -53,7 +53,9 @@ sap.ui.define([
 							oStock.at(_msRow).TotalQuantity += _quantityVal;
 						}
 						else{
+							var id = oStock.length;
 							var _oData = {
+								'stockId':id,
 								'Material':_materialVal,
 								'Segment':_segmentVal,
 								'TotalQuantity': _quantityVal,
@@ -87,10 +89,9 @@ sap.ui.define([
 				return -1;
 			},
 
-			_findBatRow: function(oBat,_batchVal){
-				for(var row = 0; row < oBat.length; row++){
-					var _data = oBat.at(row);
-					console.log(_batchVal);
+			_findBatRow: function(_oBat,_batchVal){
+				for(var row = 0; row < _oBat.length; row++){
+					var _data = _oBat.at(row);
 					if(_data.Batch === _batchVal){
 						return row;
 					}

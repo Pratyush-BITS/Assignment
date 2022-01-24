@@ -41,6 +41,9 @@
 						<Table id="stockTable" items="{storehouse>/stock}" headerText="{i18n>tabletitle}">
 						
 							<columns>
+							<Column >
+									<Text text="{i18n>stockId}"></Text>
+								</Column>
 								<Column >
 									<Text text="{i18n>material}"></Text>
 								</Column>
@@ -54,6 +57,7 @@
 							<items>
 								<ColumnListItem id="colListItem" type="Navigation" press=".onNavigation">
 									<cells>
+										<Text text="{storehouse>stockId}"/>
 										<Text text="{storehouse>Material}"/>
 										<Text text="{storehouse>Segment}"/>
 										<Text text="{storehouse>TotalQuantity}" />
